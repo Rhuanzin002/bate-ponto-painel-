@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header h1 {
+    color: #38bdf8;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.card {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+    font-size: 18px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background-color: #0f172a;
+    color: #38bdf8;
+}
+
+tr:hover {
+    background-color: #273548;
+}
+
+input[type="number"] {
+    width: 90px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-pagar {
+    background-color: #4ade80;
+    color: #0f172a;
+}
+
+.btn-pagar:hover {
+    background-color: #22c55e;
+}
+
+.btn-desconsiderar {
+    background-color: #f87171;
+    color: #fff;
+}
+
+.btn-desconsiderar:hover {
+    background-color: #ef4444;
+}
+
+.status-valido {
+    color: #4ade80;
+    font-weight: 600;
+}
+
+.status-desconsiderado {
+    color: #f87171;
+    text-decoration: line-through;
+}
+
+.status-pago {
+    color: #fbbf24;
+}

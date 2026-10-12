@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Gestor - Controle de Ponto</title>
+    <link rel="stylesheet" href="painel.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Painel de Controle - Diárias</h1>
+            <p>Gerenciamento de pontos, pagamentos e auditoria.</p>
+        </header>
+
+        <!-- Seção de Resumo / Pagamento por Funcionário -->
+        <section class="card">
+            <h2>Resumo para Pagamento (Pendentes)</h2>
+            <div class="table-responsive">
+                <table id="tabela-resumo">
+                    <thead>
+                        <tr>
+                            <th>Funcionário</th>
+                            <th>Pontos Pendentes</th>
+                            <th>Valor da Diária (R$)</th>
+                            <th>Total a Pagar (R$)</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Preenchido via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Histórico Completo / Auditoria (Desconsiderar pontos) -->
+        <section class="card">
+            <h2>Histórico de Pontos Batidos</h2>
+            <div class="table-responsive">
+                <table id="tabela-historico">
+                    <thead>
+                        <tr>
+                            <th>Funcionário</th>
+                            <th>Data e Hora</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Preenchido via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="painel.js"></script>
+</body>
+</html>
