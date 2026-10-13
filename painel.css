@@ -5,6 +5,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 body {
     background-color: #0f172a;
     color: #f8fafc;
@@ -19,6 +23,7 @@ body {
 header {
     margin-bottom: 30px;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
@@ -121,4 +126,60 @@ button {
 
 .status-pago {
     color: #fbbf24;
+}
+
+/* ---------- Login ---------- */
+.login-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 0;
+}
+
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: #fff;
+    font-size: 15px;
+}
+
+.btn-entrar {
+    width: 100%;
+    padding: 12px;
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.btn-entrar:hover {
+    background-color: #0ea5e9;
+}
+
+.erro-login {
+    margin-top: 12px;
+    color: #f87171;
+    font-size: 14px;
+    text-align: center;
+    min-height: 18px;
+}
+
+.btn-sair {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+.btn-sair:hover {
+    background-color: #475569;
 }

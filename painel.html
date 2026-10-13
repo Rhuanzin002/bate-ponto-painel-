@@ -8,10 +8,22 @@
 </head>
 <body>
 
-    <div class="container">
+    <!-- Tela de login -->
+    <div id="tela-login" class="login-wrapper">
+        <div class="card login-card">
+            <h2>Acesso ao Painel</h2>
+            <input type="password" id="campo-senha" placeholder="Digite a senha" autocomplete="current-password">
+            <button id="btn-entrar" class="btn-entrar">Entrar</button>
+            <p id="erro-login" class="erro-login"></p>
+        </div>
+    </div>
+
+    <!-- Painel (só aparece depois do login) -->
+    <div id="painel" class="container" hidden>
         <header>
             <h1>Painel de Controle - Diárias</h1>
             <p>Gerenciamento de pontos, pagamentos e auditoria.</p>
+            <button id="btn-sair" class="btn-sair">Sair</button>
         </header>
 
         <!-- Seção de Resumo / Pagamento por Funcionário -->
