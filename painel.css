@@ -66,6 +66,7 @@ table {
 th, td {
     padding: 12px 15px;
     border-bottom: 1px solid #334155;
+    vertical-align: middle;
 }
 
 th {
@@ -75,6 +76,21 @@ th {
 
 tr:hover {
     background-color: #273548;
+}
+
+/* Estilo para a miniatura da selfie na tabela */
+#tabela-historico img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #38bdf8;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#tabela-historico img:hover {
+    transform: scale(1.1);
 }
 
 input[type="number"] {

@@ -24,7 +24,6 @@ function apagarSenha() {
 
 let senhaAtual = lerSenhaSalva();
 
-// Faz a requisição já enviando a senha no cabeçalho
 async function chamarApi(caminho, opcoes = {}) {
     const resposta = await fetch(`${API_URL}${caminho}`, {
         ...opcoes,
@@ -133,7 +132,6 @@ function renderizarResumo(resumo) {
             <td><button class="btn-pagar">Marcar como Pago</button></td>
         `;
 
-        // O nome vai pelo JS (não dentro do HTML), evitando quebrar com aspas no nome
         tr.querySelector('.btn-pagar').addEventListener('click', () => marcarComoPago(item.nome));
         tbody.appendChild(tr);
     });
@@ -151,7 +149,7 @@ function renderizarHistorico(historico) {
     tbody.innerHTML = '';
 
     if (historico.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #94a3b8;">Nenhum registro de ponto encontrado.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #94a3b8;">Nenhum registro de ponto encontrado.</td></tr>`;
         return;
     }
 
@@ -169,8 +167,14 @@ function renderizarHistorico(historico) {
             statusText = 'Pago';
         }
 
+        // Renderiza a miniatura da selfie se existir
+        const selfieHtml = item.selfie 
+            ? `<img src="${item.selfie}" width="40" height="40" style="border-radius: 50%; object-fit: cover; cursor: pointer; border: 2px solid #38bdf8;" onclick="abrirFotoMaior('${item.selfie}')" title="Clique para ampliar"/>` 
+            : 'Sem foto';
+
         tr.innerHTML = `
             <td>${escapeHtml(item.nome)}</td>
+            <td>${selfieHtml}</td>
             <td>${new Date(item.dataHora).toLocaleString('pt-BR')}</td>
             <td><span class="${statusClass}">${statusText}</span></td>
             <td>
@@ -179,6 +183,12 @@ function renderizarHistorico(historico) {
         `;
         tbody.appendChild(tr);
     });
+}
+
+// Função para abrir a selfie em tamanho maior num modal simples ou aba nova
+function abrirFotoMaior(base64Img) {
+    const win = window.open();
+    win.document.write(`<iframe src="${base64Img}" frameborder="0" style="border:0; top:0; left:0; bottom:0; right:0; width:100%; height:100%;" allowfullscreen></iframe>`);
 }
 
 async function marcarComoPago(nomeFuncionario) {
@@ -222,7 +232,6 @@ async function desconsiderarPonto(pontoId) {
 }
 
 // ---------- Início ----------
-// Se já logou nesta aba, tenta entrar direto; senão mostra a tela de login
 if (senhaAtual) {
     mostrarPainel();
     carregarPainel();
